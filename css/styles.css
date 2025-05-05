@@ -19,9 +19,9 @@ body::after {
 }
 
 body::before {
-  width: 400px;
+  width: 600px;
   height: 400px;
-  background: radial-gradient(circle, rgba(128, 0, 128, 0.8), transparent);
+  background: radial-gradient(circle, rgba(94, 0, 94, 0.8), transparent);
   top: -100px;
   left: -100px;
 }
@@ -29,9 +29,9 @@ body::before {
 body::after {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(75, 0, 130, 0.8), transparent);
-  bottom: -150px;
-  right: -150px;
+  background: radial-gradient(circle, rgba(94, 0, 94, 0.8), transparent);
+  bottom: 200px;
+  right: 300px;
 }
 
 /* Additional decorative circles */
@@ -71,11 +71,15 @@ header {
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
-  gap: 2rem;
-  margin: 0;
+  justify-content: center;
+  list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 0 40px; /* Zvýšení odsazení mezi tlačítky na větší hodnotu */
 }
 
 .navbar a {
@@ -86,7 +90,7 @@ header {
 }
 
 .navbar a:hover {
-  color: #00bcd4;
+  color: #9700d3; /* Zvýraznění barvy při hoveru */
 }
 
 nav a {
@@ -97,11 +101,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #00bcd4;
+  color: #7e009e;
 }
 
 section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
+  padding-bottom: 0;
   text-align: center;
 }
 
@@ -121,26 +126,32 @@ section {
 }
 
 .project-card {
-  flex: 0 0 25%; /* 4 cards visible */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
+  display: block; /* Zajistí, že odkaz pokryje celou kartu */
+  text-decoration: none; /* Odstranění podtržení odkazu */
+  color: inherit; /* Zachování barvy textu */
+  flex: 0 0 calc(30% - 1rem); /* Zajistí, že tři karty budou viditelné a kousek další */
+  max-width: calc(30% - 1rem); /* Zajistí správnou šířku */
+  background: rgba(255, 255, 255, 0.1); /* Průhledné pozadí */
+  backdrop-filter: blur(15px); /* Rozmazání pozadí */
+  border-radius: 15px; /* Zaoblené rohy */
   padding: 1rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Jemný stín */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Jemné ohraničení */
   text-align: center;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Zvýraznění při najetí myší */
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.3); /* Zvýrazněný stín při najetí */
 }
 
 .project-card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px; /* Zaoblené rohy obrázku */
   margin-bottom: 1rem;
 }
 
@@ -154,18 +165,11 @@ section {
   color: #ccc;
 }
 
-.contact-form {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px;
-}
-
 form label {
   display: block;
-  margin: 1rem 0 0.5rem;
+  text-align: left;
+  margin-bottom: -20px;
+  margin-left: 10px;
 }
 
 form input,
@@ -173,13 +177,29 @@ form textarea,
 form button {
   width: 100%;
   padding: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border: none;
   border-radius: 5px;
 }
 
+form input {
+  padding-top: 1rem;
+}
+
+form input:focus-visible {
+  outline: none;
+}
+
+form textarea {
+  padding-top: 1rem;
+}
+
+form textarea:focus-visible {
+  outline: none;
+}
+
 form button {
-  background: #00bcd4;
+  background: #5a0063;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -187,7 +207,7 @@ form button {
 }
 
 form button:hover {
-  background: #0097a7;
+  background: #48005a;
 }
 
 input,
@@ -207,7 +227,7 @@ textarea::placeholder {
 }
 
 button {
-  background-color: #00bcd4;
+  background-color: #8000a7;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -217,11 +237,12 @@ button {
 }
 
 button:hover {
-  background-color: #0097a7;
+  background-color: #440055;
 }
 
 #about {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
+  padding-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,13 +285,13 @@ button:hover {
 
 .about-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   border-radius: 15px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 #projects {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
+  padding-bottom: 0;
   text-align: center;
 }
 
@@ -282,37 +303,89 @@ button:hover {
   overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 30px;
+}
+
+.projects-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px; /* Šířka gradientového efektu */
+  z-index: 1;
+  pointer-events: none;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(30, 30, 47, 1),
+    rgba(30, 30, 47, 0)
+  );
+  opacity: 0; /* Skrytí gradientu na levé straně */
+  transition: opacity 0.3s ease; /* Přidání přechodu pro zobrazení/skrývání */
+  margin: 30px 0 30px 0;
+}
+
+.projects-container.show-left-gradient::before {
+  opacity: 1; /* Zobrazení gradientu na levé straně */
+}
+
+.projects-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px; /* Šířka gradientového efektu */
+  z-index: 1;
+  pointer-events: none;
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(30, 30, 47, 1),
+    rgba(30, 30, 47, 0)
+  );
+  opacity: 0; /* Skrytí gradientu na pravé straně */
+  transition: opacity 0.3s ease; /* Přidání přechodu pro zobrazení/skrývání */
+  margin: 30px 0 30px 0;
+}
+
+.projects-container.show-right-gradient::after {
+  opacity: 1; /* Zobrazení gradientu na pravé straně */
 }
 
 .projects-slider {
   display: flex;
-  gap: 2rem;
-  transition: transform 0.5s ease-in-out;
+  gap: 1.5rem; /* Menší mezera mezi kartami */
+  transition: transform 0.5s ease-in-out; /* Hladký přechod při posouvání */
+  will-change: transform;
+  padding: 0 4rem; /* Přidání odsazení na obou stranách */
 }
 
 .arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
+  top: 0; /* Zarovnání tlačítka na vrchol */
+  bottom: 0; /* Roztažení tlačítka na celou výšku */
+  width: 50px; /* Šířka tlačítka */
+  background: none; /* Odstranění pozadí */
+  border: none; /* Odstranění okrajů */
+  color: #ffffff; /* Barva šipky */
+  font-size: 2.5rem; /* Velikost šipky */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 50%;
   z-index: 10;
-  transition: background 0.3s ease;
+  transition: transform 0.3s ease; /* Jemný zvětšovací efekt */
 }
 
 .arrow:hover {
-  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.2); /* Jemné zvětšení při najetí myší */
+  background: none; /* Zajištění, že pozadí zůstane nezměněné */
 }
 
 .left-arrow {
-  left: 10px;
+  left: 0; /* Zarovnání tlačítka doleva */
 }
 
 .right-arrow {
-  right: 10px;
+  right: 0; /* Zarovnání tlačítka doprava */
 }

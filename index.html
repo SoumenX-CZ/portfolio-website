@@ -3,77 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>SoumenX - Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">O MNĚ</a></li>
+        <li><a href="#projects">MOJE PROJEKTY</a></li>
+        <li><a href="#contact">KONTAKT</a></li>
       </ul>
     </nav>
 
     <section id="about">
       <div class="about-container">
         <div class="about-text">
-          <h1>About Me</h1>
+          <h1>O MNĚ</h1>
           <p>
-            Welcome to my portfolio! I am a passionate developer with experience
-            in various technologies. I love creating modern and user-friendly
-            applications. My goal is to deliver high-quality solutions that make
-            a difference.
+            Jsem vývojář webových aplikací se zaměřením na frontend i backend.
+            Pracuji s Pythonem, JavaScriptem, Reactem a dalšími technologiemi.
+            Mým cílem je vytvářet efektivní a spolehlivá digitální řešení, která
+            odpovídají moderním trendům.
           </p>
         </div>
         <div class="about-image">
-          <img src="images/large-image.jpg" alt="About Me Image" />
+          <img src="images/large-image.png" alt="About Me Image" />
         </div>
       </div>
     </section>
 
     <section id="projects">
-      <h2>My Projects</h2>
+      <h2>MOJE PROJEKTY</h2>
       <div class="projects-container">
         <button class="arrow left-arrow">&#8249;</button>
         <div class="projects-slider">
-          <div class="project-card">
-            <img src="images/project1.jpg" alt="Project 1" />
-            <h3>Project 1</h3>
-            <p>Short description of project 1.</p>
-          </div>
-          <div class="project-card">
-            <img src="images/project2.jpg" alt="Project 2" />
-            <h3>Project 2</h3>
-            <p>Short description of project 2.</p>
-          </div>
-          <div class="project-card">
-            <img src="images/project3.jpg" alt="Project 3" />
-            <h3>Project 3</h3>
-            <p>Short description of project 3.</p>
-          </div>
-          <div class="project-card">
-            <img src="images/project4.jpg" alt="Project 4" />
-            <h3>Project 4</h3>
-            <p>Short description of project 4.</p>
-          </div>
+          <a
+            href="https://github.com/SoumenX-CZ/GCH-Informatika"
+            class="project-card"
+          >
+            <img src="images/project1.png" alt="Project 1" />
+            <h3>GCH - Informatika</h3>
+            <p>Lekce informatiky s vysvětlením</p>
+          </a>
+          <a
+            href="https://github.com/SoumenX-CZ/PhotochemistryPublic"
+            class="project-card"
+          >
+            <img src="images/project2.png" alt="Project 2" />
+            <h3>Webová aplikace Photochemistry</h3>
+            <p>Aplikace na rozpoznávání chemických vzorců a rovnic</p>
+          </a>
+          <a href="https://github.com/SoumenX-CZ/CisloPi" class="project-card">
+            <img src="images/project3.png" alt="Project 3" />
+            <h3>πdivý průvodce číslem π</h3>
+            <p>Historie a výpočet čísla π</p>
+          </a>
+          <a
+            href="https://github.com/SoumenX-CZ/maturita-topic-generator"
+            class="project-card"
+          >
+            <img src="images/project4.png" alt="Project 4" />
+            <h3>Generátor náhodných témat</h3>
+            <p>Maturitní témata z matematiky nebo češtiny</p>
+          </a>
+          <a
+            href="https://github.com/SoumenX-CZ/CramerovoPravidlo"
+            class="project-card"
+          >
+            <img src="images/project5.png" alt="Project 5" />
+            <h3>Cramerovo pravidlo</h3>
+            <p>Řešení soustavy rovnic pomocí Cramerova pravidla</p>
+          </a>
         </div>
         <button class="arrow right-arrow">&#8250;</button>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Contact Me</h2>
-      <form class="glassmorphism">
-        <label for="name">Name:</label>
+      <h2>KONTAKT</h2>
+      <form class="glassmorphism contact-form">
+        <label for="name">Jméno:</label>
         <input type="text" id="name" name="name" required />
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
-        <label for="message">Message:</label>
+        <label for="message">Zpráva:</label>
         <textarea id="message" name="message" required></textarea>
-        <button type="submit">Send</button>
+        <button type="submit">Poslat</button>
       </form>
     </section>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script>
+      (function () {
+        emailjs.init("fExFiQnZz49_ozw6b"); // Nahraďte "YOUR_USER_ID" svým User ID z EmailJS
+      })();
+    </script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
